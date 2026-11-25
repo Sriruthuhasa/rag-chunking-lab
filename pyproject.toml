@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rag-chunking-lab"
+version = "0.1.0"
+description = "Split documents into RAG chunks with three strategies and measure the result."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Sri Ruthuhasa Komma" }]
+requires-python = ">=3.9"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+rag-chunk = "rag_chunking_lab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
